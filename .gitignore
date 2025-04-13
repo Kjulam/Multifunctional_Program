@@ -1,0 +1,16 @@
+# 忽略Python编译文件
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+# 忽略虚拟环境
+venv/
+env/
+# 忽略依赖文件
+requirements.txt
+Pipfile.lock
+# 忽略IDE相关文件
+.idea/
+.vscode/
+# 忽略日志文件
+*.log
