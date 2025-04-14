@@ -34,11 +34,11 @@ def main(root_folder: str):
                 return 0
             if 1 <= choice <= len(functions_list):
                 selected_function = functions_list[choice - 1]
-                if hasattr(modules_dict[selected_function], "__main__"):
+                if hasattr(modules_dict[selected_function], "main"):
                     clear_screen()
                     modules_dict[selected_function].main()
                 else:
-                    print(f"错误：{selected_function} 没有 __main__() 函数，无法运行。")
+                    print(f"错误：{selected_function} 没有 main() 函数，无法运行。")
             else:
                 print("无效的输入。请重新选择。")
         except ValueError:
