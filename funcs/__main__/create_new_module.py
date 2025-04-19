@@ -11,7 +11,11 @@ def create_new_module(passedin_commands: list):
         elif re.search(r"^funcname=.+$", item) and (passedin_commands.index(item) > passedin_commands.index("--create-new-module")):
             funcname = item.split("=")[1]
         elif re.search(r"^functype=.+$", item) and (passedin_commands.index(item) > passedin_commands.index("--create-new-module")):
-            functype = item.split("=")[1]
+            if item.split("=")[1] == "function" or item.split("=")[1] == "plugin":
+                functype = item.split("=")[1]
+            else:
+                print("错误：\"functype\" 参数只能有 \"function\" 或 \"plugin\" 两种属性。")
+                return 1
 
     if dirname is None:
         print("错误：未传入参数 \"dirname=\"。")
